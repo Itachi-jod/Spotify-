@@ -1,0 +1,65 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #1db954, #191414);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.player-container {
+  background: #191414;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 90%;
+}
+
+.album-art img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 4px solid #1db954;
+}
+
+.track-info {
+  margin-bottom: 1rem;
+}
+
+.track-info h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.track-info p {
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button {
+  background: #1db954;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1ed760;
+}

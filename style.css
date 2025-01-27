@@ -20,12 +20,38 @@ body {
   width: 90%;
 }
 
-.album-art img {
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
+h1 {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
-  border: 4px solid #1db954;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+}
+
+#search-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#search-btn {
+  background: #1db954;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+#search-btn:hover {
+  background: #1ed760;
 }
 
 .track-info {

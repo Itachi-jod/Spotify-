@@ -13,22 +13,38 @@ let currentTrack = 0;
 // Fetch tracks based on search query
 async function fetchTracks(query) {
   try {
+    // Log the query to make sure it's being passed correctly
+    console.log("Fetching tracks for query:", query);
+
     const response = await fetch(`https://spotify-play-iota.vercel.app/spotify?query=${encodeURIComponent(query)}`);
+    
+    // Check if the response is successful (status 200)
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status}`);
+    }
+
     const data = await response.json();
 
-    // Example: If response contains an array of tracks
-    tracks = data.tracks.map(track => ({
-      title: track.name || "Unknown Title",
-      artist: track.artist || "Unknown Artist",
-      src: track.preview_url || "",
-    }));
+    // Log the raw data to inspect its structure
+    console.log("API response:", data);
 
-    // Load the first track
-    if (tracks.length > 0) {
-      loadTrack(0);
+    // Check if the data contains the expected structure
+    if (data && data.tracks) {
+      tracks = data.tracks.map(track => ({
+        title: track.name || "Unknown Title",
+        artist: track.artist || "Unknown Artist",
+        src: track.preview_url || "",
+      }));
+
+      // Load the first track if available
+      if (tracks.length > 0) {
+        loadTrack(0);
+      } else {
+        trackTitle.textContent = "No tracks found";
+        trackArtist.textContent = "";
+      }
     } else {
-      trackTitle.textContent = "No tracks found";
-      trackArtist.textContent = "";
+      throw new Error("Invalid data structure");
     }
   } catch (error) {
     console.error("Error fetching tracks:", error);

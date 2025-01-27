@@ -8,15 +8,16 @@
 </head>
 <body>
   <div class="player-container">
-    <h1>Spotify Clone</h1>
-    <div class="album-art">
-      <img src="https://via.placeholder.com/200" alt="Album Art" id="album-art">
+    <h1>Spotify</h1>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search for a track">
+      <button id="search-btn">Search</button>
     </div>
     <div class="track-info">
       <h2 id="track-title">Track Title</h2>
       <p id="track-artist">Artist Name</p>
     </div>
-    <audio id="audio-player" src="song.mp3"></audio>
+    <audio id="audio-player" controls></audio>
     <div class="controls">
       <button id="prev-btn">⏮</button>
       <button id="play-btn">▶</button>
